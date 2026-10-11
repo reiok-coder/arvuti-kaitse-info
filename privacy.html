@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Arvuti-kaitse uses Google Drive access, encrypts backups, stores local credentials and lets the owner revoke access.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Privacy Policy — Arvuti-kaitse</title>
+  <style>
+    :root{color-scheme:light;--ink:#172b35;--muted:#4d616b;--paper:#f7f8f4;--accent:#146552;--line:#d8e0db}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}header,main,footer{max-width:800px;margin:auto;padding:24px}header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}.brand{font-weight:700;color:var(--ink);text-decoration:none}nav{display:flex;flex-wrap:wrap;gap:20px;font-size:15px}main{padding-top:48px;padding-bottom:48px}h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 16px}h2{font-size:1.3rem;line-height:1.3;margin:32px 0 12px}p{margin:0 0 18px}.date{font-size:15px;color:var(--muted)}li{margin:8px 0}code{font-size:.88em;overflow-wrap:anywhere}footer{border-top:1px solid var(--line);font-size:14px;color:var(--muted)}@media(max-width:480px){header,main,footer{padding-left:20px;padding-right:20px}main{padding-top:36px}}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">Arvuti-kaitse</a>
+    <nav aria-label="Main navigation"><a href="index.html">About</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
+  </header>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="date">Effective 11 October 2026</p>
+    <p>Arvuti-kaitse is a self-managed personal desktop backup utility. Its owner operates it on their computer and connects it to their own Google Drive. This policy explains the utility's data use and the separate informational website.</p>
+    <h2>Google data access and purpose</h2>
+    <p>The only requested Google API scope is <code>https://www.googleapis.com/auth/drive.file</code>. It permits management of files created by the app and files explicitly made available to it. The utility uses this access to create, upload, list, read, restore and maintain its encrypted backup repository, and to check storage capacity.</p>
+    <p>It does not use this connection to browse unrelated Drive files. Google authorization tokens and the configured account identifier are used to maintain the authorized backup connection. The utility does not request Gmail, contacts or calendar access.</p>
+    <h2>Storage and protection</h2>
+    <p>The owner selects the local files and application data to back up. restic encrypts file contents and backup metadata before they are sent to Google Drive. Google receives encrypted repository objects and ordinary storage and request metadata, such as object sizes and upload times. Google's handling of its service data is covered by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+    <p>The recovery password, OAuth client configuration and authorization tokens are stored separately in private local files protected by operating-system permissions. The utility does not upload these credential files to its Drive repository. The password is required for restoration and must be kept safely outside that repository.</p>
+    <p>Local operational logs record backup results, times and errors, and may contain local paths or snapshot identifiers. Credential values are not intentionally recorded in those logs. Health logs are currently retained locally for 30 days.</p>
+    <h2>Sharing and other uses</h2>
+    <p>Backup data is transferred directly from the owner's computer to their own Google Drive using restic and rclone. The utility has no separate developer-operated backup server. It does not sell Google user data or use it for advertising, profiling or training AI models. It does not intentionally share backup contents with other people.</p>
+    <p>Arvuti-kaitse's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+    <h2>Retention and deletion</h2>
+    <p>The owner controls scheduled backups and retention. Current settings preserve application-state snapshots across 24 hourly, 14 daily and 4 weekly periods, and project snapshots across 14 daily and 4 weekly periods, with at least the two latest snapshots retained in each group. These periods describe the selection policy; the available snapshots and schedule determine the actual retained versions.</p>
+    <p>When backup deletion is enabled, repository checks precede removal of obsolete snapshots and unused objects. The owner can disable automatic deletion. Remaining backup objects stay in Google Drive until removed by the owner or the enabled retention process; Drive's own trash and deletion rules also apply.</p>
+    <h2>Stop access or remove local credentials</h2>
+    <p>The owner can disable the cloud backup tasks and remove Arvuti-kaitse's access through <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revoking authorization prevents future authorized Drive operations and does not erase existing backups. The owner can remove the backup folder in Drive and delete the local token files separately.</p>
+    <h2>This website and questions</h2>
+    <p>This informational website has no login, forms, advertising or analytics scripts. Visiting it does not connect Google Drive or send backup files to the website. Its hosting provider may keep ordinary request logs under that provider's policies.</p>
+    <p>For questions about the utility or this policy, use the app support contact shown on Google's authorization screen. Any change to data use must be reflected in this policy before that use begins.</p>
+  </main>
+  <footer>Arvuti-kaitse · <a href="index.html">About the app</a> · <a href="terms.html">Terms of Use</a></footer>
+</body>
+</html>
