@@ -21,13 +21,14 @@
     <p class="date">Effective 11 October 2026</p>
     <p>Arvuti-kaitse is a self-managed utility for personal encrypted backups from an owner's computer to their own Google Drive. It is not a public hosted backup service and does not offer public account registration.</p>
     <h2>Authorized use</h2>
-    <p>Connect only an account you own or are authorized to use. Back up only files you are entitled to store. The owner chooses the source data, authorizes Google Drive access, and controls scheduled backups, retention and restoration.</p>
+    <p>Connect only an account you own or are authorized to use. Back up only files you are entitled to store. The owner chooses the source data, authorizes Google Drive access, and controls scheduled backups, retention and restoration. Optional email notifications require a separate Gmail sending authorization and send only to the owner's configured address.</p>
     <h2>Owner responsibilities</h2>
     <p>Keep the recovery password and account credentials safe. A lost recovery password can make encrypted backups unrecoverable. Monitor backup results, maintain sufficient storage and test restoration periodically. Maintain another independent copy of important data.</p>
     <p>Review retention settings before enabling deletion: removing older snapshots can permanently remove earlier file versions from the backup repository. Restoring files should first be tested in a separate destination.</p>
     <h2>Availability and third-party services</h2>
     <p>Backup completion depends on the computer, schedule, network, storage capacity, valid Google authorization, and the availability of restic, rclone and Google Drive. The utility does not guarantee that every run will succeed or that every lost file can be recovered.</p>
-    <p>Google Drive is provided by Google and remains subject to Google's applicable terms and account policies. restic and rclone remain subject to their respective software licenses.</p>
+    <p>Notifications depend on the computer running, a signed-in Windows session and, for email, connectivity and valid authorization. A fully frozen or powered-off computer cannot immediately report its own failure. Monitoring and alerts do not guarantee detection of every problem or automatic repair.</p>
+    <p>Google Drive and Gmail are provided by Google and remain subject to Google's applicable terms and account policies. restic and rclone remain subject to their respective software licenses.</p>
     <h2>Stop using the connection</h2>
     <p>The owner can disable scheduled cloud backups and revoke access in <a href="https://myaccount.google.com/connections">Google Account connections</a>. Existing Drive backup objects and local credentials must be removed separately if desired.</p>
     <p>Data handling is described in the <a href="privacy.html">Privacy Policy</a>. For questions, use the app support contact shown on Google's authorization screen.</p>

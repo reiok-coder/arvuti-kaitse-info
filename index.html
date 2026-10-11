@@ -17,13 +17,15 @@
     <nav aria-label="Main navigation"><a href="index.html" aria-current="page">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
   </header>
   <main>
-    <p class="label">Personal desktop backup tool</p>
+    <p class="label">Personal desktop backups and monitoring</p>
     <h1>Encrypted backups in your own Google Drive.</h1>
     <p class="lead">Arvuti-kaitse copies selected local backups from a personal computer to a separate encrypted repository in the computer owner's Google Drive.</p>
     <p>The tool runs on the owner's computer and uses restic for encrypted backup storage and rclone for the Google Drive connection. The owner chooses the local data to protect and controls the backup schedule, retention and recovery password.</p>
     <h2>What Google Drive access is used for</h2>
-    <p>The tool requests only the <code>https://www.googleapis.com/auth/drive.file</code> permission. It creates and manages its own backup files and folders. This permission also permits access to files a user explicitly makes available to the app; Arvuti-kaitse uses it for its backup repository.</p>
+    <p>The backup connection requests the <code>https://www.googleapis.com/auth/drive.file</code> permission. It creates and manages its own backup files and folders. This permission also permits access to files a user explicitly makes available to the app; Arvuti-kaitse uses it for its backup repository.</p>
     <p>The connection supports uploading encrypted backup objects, listing and checking that repository, downloading objects for restoration, checking available storage and removing obsolete backup objects under the owner's retention settings.</p>
+    <h2>Optional problem notifications</h2>
+    <p>The owner can enable Windows notifications and email alerts for failed backups and significant computer problems. A separate connection requests <code>gmail.send</code> to send concise alerts and test messages to the owner's own address, plus <code>openid</code> and <code>email</code> to verify that account. It does not read the mailbox. Notification emails contain ordinary readable summaries; backup files and credentials are not attached.</p>
     <h2>Under the owner's control</h2>
     <p>File contents and backup metadata are encrypted on the computer before upload. The recovery password stays outside Google Drive. Google authorization tokens are kept in a private local configuration file so scheduled backups can run.</p>
     <p>The owner can stop the scheduled tasks and revoke access in their <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revoking access stops future authorized operations; existing backup objects remain in Drive until the owner deletes them.</p>
